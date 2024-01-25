@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B789ACE6-5748-43A8-90E3-2FBA89B3676D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.API", "src\Todo.API\Todo.API.csproj", "{4C533966-6A56-459D-B2C7-5138EDDDE18E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.Blazor", "src\Todo.Blazor\Todo.Blazor.csproj", "{1D93700B-A6BD-4023-A8FE-DB80581444C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C533966-6A56-459D-B2C7-5138EDDDE18E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C533966-6A56-459D-B2C7-5138EDDDE18E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C533966-6A56-459D-B2C7-5138EDDDE18E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C533966-6A56-459D-B2C7-5138EDDDE18E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D93700B-A6BD-4023-A8FE-DB80581444C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D93700B-A6BD-4023-A8FE-DB80581444C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D93700B-A6BD-4023-A8FE-DB80581444C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D93700B-A6BD-4023-A8FE-DB80581444C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4C533966-6A56-459D-B2C7-5138EDDDE18E} = {B789ACE6-5748-43A8-90E3-2FBA89B3676D}
+		{1D93700B-A6BD-4023-A8FE-DB80581444C6} = {B789ACE6-5748-43A8-90E3-2FBA89B3676D}
+	EndGlobalSection
+EndGlobal
