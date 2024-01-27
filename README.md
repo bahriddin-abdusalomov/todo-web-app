@@ -3,7 +3,7 @@
 ### resume
 [bahriddin-abdusalomov-resume.pdf](https://github.com/bahriddin-abdusalomov/todo-web-app/files/14072266/bahriddin-abdusalomov-resume.pdf)
 
-### yuo tube video likn
+### you tube video likn
 https://youtu.be/Nje8KfTYczo?si=i-CAJLwq2lrYtEuM
 
 ### git clone 
