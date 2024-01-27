@@ -5,9 +5,9 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B789ACE6-5748-43A8-90E3-2FBA89B3676D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.API", "src\Todo.API\Todo.API.csproj", "{4C533966-6A56-459D-B2C7-5138EDDDE18E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todo.API", "src\Todo.API\Todo.API.csproj", "{4C533966-6A56-459D-B2C7-5138EDDDE18E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.Blazor", "src\Todo.Blazor\Todo.Blazor.csproj", "{1D93700B-A6BD-4023-A8FE-DB80581444C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todo.Blazor", "src\Todo.Blazor\Todo.Blazor.csproj", "{1D93700B-A6BD-4023-A8FE-DB80581444C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +30,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{4C533966-6A56-459D-B2C7-5138EDDDE18E} = {B789ACE6-5748-43A8-90E3-2FBA89B3676D}
 		{1D93700B-A6BD-4023-A8FE-DB80581444C6} = {B789ACE6-5748-43A8-90E3-2FBA89B3676D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF4C76A1-090D-41FC-9E43-40FFDA7669F4}
 	EndGlobalSection
 EndGlobal
