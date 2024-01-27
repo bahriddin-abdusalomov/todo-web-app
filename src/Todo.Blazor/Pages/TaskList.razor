@@ -14,14 +14,13 @@
 }
 else
 {
-
     <div>
         <div>
             <button @onclick="@(e => CreateTaskClicked())" class="btn btn-sm btn-primary create-btn">Create task</button>
         </div>
         <div>
             <SfGrid DataSource="tasks" AllowPaging="true" Toolbar="@search">
-                <GridPageSettings PageSize="10"></GridPageSettings>
+                <GridPageSettings PageSize="15"></GridPageSettings>
                 <GridColumns>
                     <GridColumn Field="@nameof(TaskModel.Id)" Width="50px"></GridColumn>
                     <GridColumn Field="@nameof(TaskModel.Title)" Width="80px"></GridColumn>

@@ -10,14 +10,4 @@ public class TodoDbContext : DbContext
     {}
 
     public DbSet<TaskModel> Tasks { get; set; }
-
-    // Add DbSet properties for other entities if needed
-
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        // Configure relationships or additional settings here
-
-        // Example: modelBuilder.Entity<SomeEntity>().HasMany(e => e.RelatedEntities).WithOne(r => r.SomeEntity);
-    }
-
 }

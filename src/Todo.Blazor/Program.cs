@@ -9,11 +9,8 @@ using Todo.Blazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//builder.Services.AddHttpClient<ITaskService, TaskService>(client =>
-//{
-//    client.BaseAddress = new Uri("https://localhost:7286/"); // Web API proyektningizning URL manzili
-////});
-builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7286/") });
+builder.Services.AddScoped(sp => new HttpClient
+                          { BaseAddress = new Uri("https://localhost:7286/") });
 
 // Add services to the container.
 builder.Services.AddRazorPages();
