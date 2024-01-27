@@ -1,0 +1,95 @@
+﻿@page "/taskList"
+
+@using Syncfusion.Blazor.Grids
+@using System.Diagnostics.Metrics
+@using Todo.Blazor.Interfaces
+@using Todo.Blazor.Models
+
+@inject NavigationManager NavigationManager
+@inject ITaskService TaskService
+
+@if(tasks == null)
+{
+    <h1>Loading......</h1>
+}
+else
+{
+
+    <div>
+        <div>
+            <button @onclick="@(e => CreateTaskClicked())" class="btn btn-sm btn-primary create-btn">Create task</button>
+        </div>
+        <div>
+            <SfGrid DataSource="tasks" AllowPaging="true" Toolbar="@search">
+                <GridPageSettings PageSize="10"></GridPageSettings>
+                <GridColumns>
+                    <GridColumn Field="@nameof(TaskModel.Id)" Width="50px"></GridColumn>
+                    <GridColumn Field="@nameof(TaskModel.Title)" Width="80px"></GridColumn>
+                    <GridColumn Field="@nameof(TaskModel.Description)" Width="120px"></GridColumn>
+                    <GridColumn HeaderText="Due Date" Field="@nameof(TaskModel.DueDate)" Width="100px"></GridColumn>
+                    <GridColumn Field="@nameof(TaskModel.Priority)" Width="60px"></GridColumn>
+                    <GridColumn Field="@nameof(TaskModel.State)" Width="60px"></GridColumn>
+                    <GridColumn Field="@nameof(TaskModel.Notes)" Width="100px"></GridColumn>
+                    <GridColumn HeaderText="Update" Field="@nameof(TaskModel.Id)" Width="80px">
+                        <Template>
+                            <button @onclick="() => UpdateClicked(((TaskModel)context).Id.ToString())" class="oi oi-pencil btn btn-sm btn-primary ud-btn">Update</button>
+                        </Template>
+                    </GridColumn>
+                    <GridColumn HeaderText="Delete" Field="@nameof(TaskModel.Id)" Width="80px">
+                        <Template>
+                            <button @onclick="() => DeleteClicked(((TaskModel)context).Id.ToString())" class="oi oi-trash btn btn-sm btn-danger ud-btn">Delete</button>
+                        </Template>
+                    </GridColumn>
+                    <GridColumn HeaderText="Details" Field="@nameof(TaskModel.Id)" Width="80px">
+                        <Template>
+                            <button @onclick="() => DetailsClicked(((TaskModel)context).Id.ToString())" class="oi btn btn-sm btn-secondary ud-btn">Details</button>
+                        </Template>
+                    </GridColumn>
+                </GridColumns>
+            </SfGrid>
+        </div>
+    </div>
+}
+
+<style>
+    .create-btn{
+        width: 240px;
+        height: 40px;
+        font-size: 20px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin-bottom: 20px;
+    }
+    .ud-btn{
+        width: 100px;
+    }
+</style>
+
+@code {
+    private List<Object> search = new List<object> { "Search" };
+    private IList<TaskModel> tasks;
+
+    protected override async Task OnInitializedAsync()
+    {
+        tasks = await TaskService.GetTasks();
+    }
+
+    private void CreateTaskClicked()
+    {
+        NavigationManager.NavigateTo("CreateTask");
+    }
+
+    private void UpdateClicked(string id)
+    {
+        NavigationManager.NavigateTo($"EditTask/{id}");
+    }
+
+    private void DeleteClicked(string id)
+    {
+        NavigationManager.NavigateTo($"DeleteTask/{id}");
+    }
+
+    private void DetailsClicked(string id)
+    {
+        NavigationManager.NavigateTo($"DetailsTask/{id}");
+    }
+}

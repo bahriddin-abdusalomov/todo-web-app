@@ -1,0 +1,101 @@
+﻿@page "/editTask/{id}"
+
+@using Todo.Blazor.Interfaces
+@using Todo.Blazor.Models
+
+@inject ITaskService TaskService
+@inject NavigationManager NavigationManager
+
+<h3>Edit Task</h3>
+<hr />
+<div class="contenier">
+    <form>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label for="Title" class="control-label"> Title</label>
+                    <input for="Title" class="form-control" @bind="@obj.Title" />
+                </div>
+                <div class="form-group">
+                    <label for="Description" class="control-label"> Description</label>
+                    <input for="Description" class="form-control" @bind="@obj.Description" />
+                </div>
+                <div class="form-group">
+                    <label for="DuaDate" class="control-label"> Dua Date</label>
+                    <input for="DuaDate" type="date" class="form-control" @bind="@obj.DueDate" />
+                </div>
+                <div class="form-group">
+                    <label for="Priority" class="control-label"> Priority</label>
+                    <select @bind="@obj.Priority" class="form-control">
+                        <option value="">Select Priority</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="State" class="control-label"> State</label>
+                    <select @bind="@obj.State" class="form-control">
+                        <option value="">Select State</option>
+                        <option value="Todo">Todo</option>
+                        <option value="InProgress">InProgress</option>
+                        <option value="Completed">Comleted</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Notes" class="control-label"> Notes</label>
+                    <input for="Notes" class="form-control" @bind="@obj.Notes" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input type="button" class="btn btn-primary btnstyle" @onclick="@UpdateTaskClicked" value="Update" />
+                    <input type="button" class="btn btn-primary btnstyle" @onclick="@Cancel" value="Cancel" />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<style>
+    .contenier {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .row {
+        margin-left: 300px;
+        width: 900px;
+    }
+    .form-group {
+        max-width: 1000px;
+        margin-bottom: 10px
+    }
+    .btnstyle {
+        width: 100px !important;
+        margin-right: 15px;
+    }
+</style>
+
+
+@code {
+    [Parameter]
+    public string id { get; set; }
+
+    TaskModel obj = new TaskModel();
+    protected async void UpdateTaskClicked()
+    {
+        await TaskService.UpdateTask(obj);
+        NavigationManager.NavigateTo("TaskList");
+    }
+    void Cancel()
+    {   
+        NavigationManager.NavigateTo("TaskList");
+    }
+    protected async override Task OnInitializedAsync()
+    {
+        obj = await TaskService.GetTaskById(Convert.ToInt32(id));
+    }
+}
