@@ -6,7 +6,7 @@
 ### you tube video likn
 https://youtu.be/Nje8KfTYczo?si=i-CAJLwq2lrYtEuM
 
-### git clone 
+### git clone  
 ```
 https://github.com/bahriddin-abdusalomov/todo-web-app.git
 ```
