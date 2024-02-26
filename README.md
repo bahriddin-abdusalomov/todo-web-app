@@ -8,7 +8,7 @@ https://youtu.be/Nje8KfTYczo?si=i-CAJLwq2lrYtEuM
 
 ### git clone  
 ```
-https://github.com/bahriddin-abdusalomov/todo-web-app.git
+https://github.com/bahriddin-abdusalomov/todo-web-app.git 
 ```
 ![image](https://github.com/bahriddin-abdusalomov/todo-web-app/assets/123171397/898d71c4-1247-4234-8c29-fa3d498cb6a2)
 Projectni ishlatish uchun `Server` va `Database` qismi o'zingizning databasengizga mos ravishda o'zgartirilishi kerak boladi
